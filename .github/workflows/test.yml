@@ -8,8 +8,6 @@ jobs:
     container:
       image: nixpkgs/nix-flakes:nixos-22.11
     steps:
-      - name: install exa
-        run: nix shell nixpkgs#exa
-      - name: run exa
-        run: exa -l
+      - name: use exa
+        run: nix shell nixpkgs#exa -c exa -l /
 
