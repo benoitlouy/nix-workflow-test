@@ -1,0 +1,15 @@
+name: test
+
+on: workflow_dispatch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    container:
+      image: nixpkgs/nix-flakes:nixos-22.11
+    steps:
+      - name: install exa
+        run: nix shell nixpkgs#exa
+      - name: run exa
+        run: exa -l
+
